@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Placement Readiness Self Assessment Portal</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+<!-- NAVIGATION BAR -->
+<nav class="navbar">
+  <div class="nav-content">
+    <div class="logo"><i class="fa-solid fa-graduation-cap"></i> Placement Readiness Portal</div>
+  </div>
+</nav>
+
+<!-- LANDING / HERO SECTION -->
+<section id="landing" class="step-section active">
+  <div class="hero">
+    <h1>Placement Readiness Self Assessment Portal</h1>
+    <p class="tagline">Know where you stand before your campus placements.</p>
+
+    <div class="feature-grid">
+      <div class="feature-card">
+        <i class="fa-solid fa-code"></i>
+        <h3>Coding Assessment</h3>
+        <p>Test your basic programming knowledge.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-calculator"></i>
+        <h3>Aptitude Assessment</h3>
+        <p>Check your quantitative and logical skills.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-comments"></i>
+        <h3>Communication Assessment</h3>
+        <p>Evaluate your English and grammar skills.</p>
+      </div>
+      <div class="feature-card">
+        <i class="fa-solid fa-chart-line"></i>
+        <h3>Personalized Report</h3>
+        <p>Get a detailed readiness score and roadmap.</p>
+      </div>
+    </div>
+
+    <button id="startBtn" class="btn btn-primary btn-large">
+      Start Assessment <i class="fa-solid fa-arrow-right"></i>
+    </button>
+  </div>
+</section>
+
+<!-- WIZARD WRAPPER (Profile -> Report) -->
+<div id="wizard" class="wizard-wrapper">
+
+  <!-- PROGRESS INDICATOR -->
+  <div class="progress-bar-container">
+    <div id="progressBar" class="progress-bar"></div>
+  </div>
+  <div id="stepLabel" class="step-label">Step 1 of 6: Student Profile</div>
+
+  <!-- STEP 1: STUDENT PROFILE -->
+  <section id="profile" class="step-section">
+    <div class="card">
+      <h2><i class="fa-solid fa-user"></i> Student Profile</h2>
+
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="Enter your full name">
+        <span class="error-msg" id="nameError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="regNo">Register Number</label>
+        <input type="text" id="regNo" placeholder="Enter your register number">
+        <span class="error-msg" id="regNoError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="dept">Department</label>
+        <select id="dept">
+          <option value="">Select Department</option>
+          <option value="CSE">CSE</option>
+          <option value="IT">IT</option>
+          <option value="ECE">ECE</option>
+          <option value="EEE">EEE</option>
+          <option value="MECH">MECH</option>
+          <option value="CIVIL">CIVIL</option>
+        </select>
+        <span class="error-msg" id="deptError"></span>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="year">Year</label>
+          <select id="year">
+            <option value="">Select Year</option>
+            <option value="1">1st Year</option>
+            <option value="2">2nd Year</option>
+            <option value="3">3rd Year</option>
+            <option value="4">4th Year</option>
+          </select>
+          <span class="error-msg" id="yearError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="semester">Semester</label>
+          <select id="semester">
+            <option value="">Select Semester</option>
+            <option value="1">Semester 1</option>
+            <option value="2">Semester 2</option>
+            <option value="3">Semester 3</option>
+            <option value="4">Semester 4</option>
+            <option value="5">Semester 5</option>
+            <option value="6">Semester 6</option>
+            <option value="7">Semester 7</option>
+            <option value="8">Semester 8</option>
+          </select>
+          <span class="error-msg" id="semesterError"></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="cgpa">CGPA (0 - 10)</label>
+        <input type="number" id="cgpa" placeholder="e.g. 8.2" min="0" max="10" step="0.01">
+        <span class="error-msg" id="cgpaError"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 2: ACADEMIC PROFILE -->
+  <section id="academic" class="step-section">
+    <div class="card">
+      <h2><i class="fa-solid fa-book"></i> Academic Profile</h2>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="projects">Projects Completed</label>
+          <input type="number" id="projects" placeholder="e.g. 3" min="0">
+          <span class="error-msg" id="projectsError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="internships">Internships</label>
+          <input type="number" id="internships" placeholder="e.g. 1" min="0">
+          <span class="error-msg" id="internshipsError"></span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="certifications">Certifications</label>
+          <input type="number" id="certifications" placeholder="e.g. 2" min="0">
+          <span class="error-msg" id="certificationsError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="hackathons">Hackathons Participated</label>
+          <input type="number" id="hackathons" placeholder="e.g. 1" min="0">
+          <span class="error-msg" id="hackathonsError"></span>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="github">GitHub Profile (optional)</label>
+        <input type="text" id="github" placeholder="https://github.com/username">
+      </div>
+
+      <div class="form-group">
+        <label for="linkedin">LinkedIn Profile (optional)</label>
+        <input type="text" id="linkedin" placeholder="https://linkedin.com/in/username">
+      </div>
+
+      <div class="form-group">
+        <label>Resume Uploaded</label>
+        <div class="radio-row">
+          <label class="radio-label"><input type="radio" name="resume" value="yes"> Yes</label>
+          <label class="radio-label"><input type="radio" name="resume" value="no"> No</label>
+        </div>
+        <span class="error-msg" id="resumeError"></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- STEP 3: CODING ASSESSMENT -->
+  <section id="coding" class="step-section">
+    <div class="card">
+      <h2><i class="fa-solid fa-code"></i> Coding Assessment</h2>
+      <p class="section-note">Answer all 5 questions. Each carries equal marks.</p>
+      <div id="codingQuestions" class="quiz-container"></div>
+      <span class="error-msg" id="codingError"></span>
+    </div>
+  </section>
+
+  <!-- STEP 4: APTITUDE ASSESSMENT -->
+  <section id="aptitude" class="step-section">
+    <div class="card">
+      <h2><i class="fa-solid fa-calculator"></i> Aptitude Assessment</h2>
+      <p class="section-note">Answer all 5 questions. Each carries equal marks.</p>
+      <div id="aptitudeQuestions" class="quiz-container"></div>
+      <span class="error-msg" id="aptitudeError"></span>
+    </div>
+  </section>
+
+  <!-- STEP 5: COMMUNICATION ASSESSMENT -->
+  <section id="communication" class="step-section">
+    <div class="card">
+      <h2><i class="fa-solid fa-comments"></i> Communication Assessment</h2>
+      <p class="section-note">Answer all 5 questions. Each carries equal marks.</p>
+      <div id="communicationQuestions" class="quiz-container"></div>
+      <span class="error-msg" id="communicationError"></span>
+    </div>
+  </section>
+
+  <!-- STEP 6: HR READINESS -->
+  <section id="hr" class="step-section">
+    <div class="card">
+      <h2><i class="fa-solid fa-user-tie"></i> HR Readiness</h2>
+      <p class="section-note">Have you prepared answers for the following questions?</p>
+      <div id="hrQuestions" class="quiz-container"></div>
+      <span class="error-msg" id="hrError"></span>
+    </div>
+  </section>
+
+  <!-- NAVIGATION BUTTONS -->
+  <div class="nav-buttons">
+    <button id="prevBtn" class="btn btn-secondary"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+    <button id="nextBtn" class="btn btn-primary">Next <i class="fa-solid fa-arrow-right"></i></button>
+    <button id="generateBtn" class="btn btn-primary">Generate Report <i class="fa-solid fa-chart-pie"></i></button>
+  </div>
+</div>
+
+<!-- FINAL REPORT SECTION -->
+<section id="report" class="step-section">
+  <div class="report-wrapper">
+
+    <div class="report-header card">
+      <h2>Placement Readiness Report</h2>
+      <p id="reportStudentName" class="report-student-name"></p>
+
+      <div class="readiness-circle-wrapper">
+        <svg class="readiness-circle" viewBox="0 0 200 200">
+          <circle class="circle-bg" cx="100" cy="100" r="85"></circle>
+          <circle id="circleProgress" class="circle-progress" cx="100" cy="100" r="85"></circle>
+        </svg>
+        <div class="circle-text">
+          <span id="readinessPercentText">0%</span>
+          <small>Readiness</small>
+        </div>
+      </div>
+
+      <div id="readinessBadge" class="badge"></div>
+
+      <div class="overall-progress-bar-container">
+        <div id="overallProgressBar" class="overall-progress-bar"></div>
+      </div>
+    </div>
+
+    <!-- SECTION WISE PERFORMANCE -->
+    <div class="card">
+      <h3><i class="fa-solid fa-list-check"></i> Section Wise Performance</h3>
+      <div id="sectionWiseCards" class="section-grid"></div>
+    </div>
+
+    <!-- STRENGTHS -->
+    <div class="card">
+      <h3><i class="fa-solid fa-star"></i> Strengths</h3>
+      <ul id="strengthsList" class="report-list strengths-list"></ul>
+    </div>
+
+    <!-- AREAS TO IMPROVE -->
+    <div class="card">
+      <h3><i class="fa-solid fa-triangle-exclamation"></i> Areas to Improve</h3>
+      <ul id="weaknessesList" class="report-list weaknesses-list"></ul>
+    </div>
+
+    <!-- PERSONALIZED ROADMAP -->
+    <div class="card">
+      <h3><i class="fa-solid fa-route"></i> Personalized Roadmap</h3>
+      <div id="roadmapCards" class="section-grid"></div>
+    </div>
+
+    <!-- ESTIMATED IMPROVEMENT -->
+    <div class="card estimate-card">
+      <h3><i class="fa-solid fa-chart-line"></i> Estimated Improvement</h3>
+      <div class="estimate-row">
+        <div class="estimate-box">
+          <span id="currentReadinessText">0%</span>
+          <small>Current Readiness</small>
+        </div>
+        <i class="fa-solid fa-arrow-right estimate-arrow"></i>
+        <div class="estimate-box estimate-box-highlight">
+          <span id="estimatedReadinessText">0%</span>
+          <small>If you follow the roadmap</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- DISCLAIMER -->
+    <div class="disclaimer">
+      <i class="fa-solid fa-circle-info"></i>
+      This readiness score is an estimate based on your self-assessment and the assessments completed within this portal. Actual interview performance depends on many factors including company-specific rounds, interview questions, communication, confidence and practical skills.
+    </div>
+
+    <button id="resetBtn" class="btn btn-secondary btn-large">
+      <i class="fa-solid fa-rotate-left"></i> Reset Assessment
+    </button>
+  </div>
+</section>
+
+<script src="Script.js"></script>
+</body>
+</html>
