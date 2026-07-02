@@ -4,8 +4,7 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
 ![Responsive](https://img.shields.io/badge/Responsive-success?style=for-the-badge)
-![Frontend](https://img.shields.io/badge/Frontend-Only-blue?style=for-the-badge)
-![License](https://img.shields.io/badge/License-Educational-orange?style=for-the-badge)
+![License](https://img.shields.io/badge/Educational-orange?style=for-the-badge)
 
 A modern **Placement Readiness Self Assessment Portal** built using **HTML, CSS, and JavaScript** that helps students evaluate their placement preparedness through an interactive multi-step assessment. The portal generates a placement readiness score, highlights strengths and weaknesses, and provides a personalized roadmap for improvement.
 
